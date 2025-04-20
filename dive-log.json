@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DiveLog",
+  "description": "Schema for recording a single scuba diving session, including location, dive conditions, equipment used, and personal notes.",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the dive."
+    },
+    "location": {
+      "type": "object",
+      "description": "Details about the dive location.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the dive site."
+        },
+        "country": {
+          "type": "string",
+          "description": "Country where the dive took place."
+        },
+        "coordinates": {
+          "type": "object",
+          "description": "Latitude and longitude of the dive site.",
+          "properties": {
+            "latitude": { "type": "number" },
+            "longitude": { "type": "number" }
+          },
+          "required": ["latitude", "longitude"]
+        }
+      },
+      "required": ["name", "coordinates"]
+    },
+    "depth_max_meters": {
+      "type": "number",
+      "description": "Maximum depth reached during the dive."
+    },
+    "duration_minutes": {
+      "type": "number",
+      "description": "Total duration of the dive in minutes."
+    },
+    "water_temperature_celsius": {
+      "type": "number",
+      "description": "Water temperature during the dive."
+    },
+    "visibility_meters": {
+      "type": "number",
+      "description": "Visibility during the dive."
+    },
+    "conditions": {
+      "type": "string",
+      "description": "Description of diving conditions (e.g., calm, current, surge)."
+    },
+    "buddy": {
+      "type": "string",
+      "description": "Name of the dive buddy."
+    },
+    "equipment": {
+      "type": "object",
+      "description": "Equipment details used in the dive.",
+      "properties": {
+        "wetsuit_type": { "type": "string" },
+        "tank_type": { "type": "string" },
+        "weight_kg": { "type": "number" },
+        "fins": { "type": "string" }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Any personal notes about the dive."
+    }
+  },
+  "required": ["date", "location", "depth_max_meters", "duration_minutes"]
+}
