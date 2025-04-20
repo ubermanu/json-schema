@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Music Playlist",
+  "description": "A schema representing a music playlist including metadata and a list of tracks.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the playlist"
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the playlist"
+    },
+    "tracks": {
+      "type": "array",
+      "description": "List of tracks in the playlist",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of the track"
+          },
+          "artist": {
+            "type": "string",
+            "description": "Name of the artist"
+          },
+          "album": {
+            "type": "string",
+            "description": "Name of the album"
+          },
+          "duration": {
+            "type": "integer",
+            "description": "Duration of the track in seconds"
+          },
+          "genre": {
+            "type": "string",
+            "description": "Genre of the track"
+          },
+          "releaseDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Release date of the track"
+          }
+        },
+        "required": ["title", "artist", "duration"]
+      }
+    }
+  },
+  "required": ["name", "tracks"]
+}
