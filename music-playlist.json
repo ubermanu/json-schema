@@ -44,7 +44,7 @@
             "description": "Release date of the track"
           }
         },
-        "required": ["title", "artist", "duration"]
+        "required": ["title"]
       }
     }
   },
