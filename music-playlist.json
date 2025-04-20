@@ -30,6 +30,10 @@
             "type": "string",
             "description": "Name of the album"
           },
+          "label": {
+            "type": "string",
+            "description": "The record label that released the track."
+          },
           "duration": {
             "type": "integer",
             "description": "Duration of the track in seconds"
